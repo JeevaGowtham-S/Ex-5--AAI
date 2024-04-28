@@ -40,7 +40,9 @@ Step 6: Plot the true and estimated positions.<BR>
 
 
 <H3>Output:</H3>
-![image](https://github.com/JeevaGowtham-S/Ex-5--AAI/assets/118042624/280e251a-da26-44a6-a8b3-2ffecbf1e6a4)
+
+![image](https://github.com/JeevaGowtham-S/Ex-5--AAI/assets/118042624/cc5e3816-06b6-4db4-bf43-8c9cfd56ee8b)
+
 
 
 
