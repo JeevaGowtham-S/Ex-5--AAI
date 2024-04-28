@@ -1,5 +1,5 @@
-<H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+<H3>ENTER YOUR NAME:  JEEVAGOWTHAM S</H3>
+<H3>ENTER YOUR REGISTER NO: 212222230053</H3>
 <H3>EX. NO.5</H3>
 <H3>DATE:</H3>
 <H1 ALIGN =CENTER> Implementation of Kalman Filter</H1>
@@ -13,10 +13,36 @@ Step 4: Update the state estimate based on the measurement using kf.update().<BR
 Step 5: Store the estimated state in a list.<BR>
 Step 6: Plot the true and estimated positions.<BR>
 <H3>Program:</H3>
-Insert your code here
+  
+  ```python
+  import numpy as np
+   class KalmanFilter:
+     def __init__ (self,F,H,Q,R,x0,P0):
+    self.F = F #state transition model
+    self.H = H # observation model
+    self.Q = Q # process noise covariance
+    self.R = R # measurement noise covariance
+    self.x = x0 # initial state extimate
+    self.P = P0 # initial error covariance
+
+  def predict(self):
+    #predict the next state
+    self.x = np.dot(self.F, self.x)
+    self.P = np.dot(np.dot(self.F, self.P),self.F.T) + self.Q
+
+  def update(self, z):
+    #update the state estimate based on the measurement z
+    y = z - np.dot(self.H, self.x)
+    S = np.dot(np.dot(self.H, self.P),self.H.T) + self.R
+    K = np.dot(np.dot(self.P, self.H.T), np.linalg.inv(S))
+    self.x = self.x + np.dot(K, y)
+```  
+
 
 <H3>Output:</H3>
-Show the results here
+![image](https://github.com/JeevaGowtham-S/Ex-5--AAI/assets/118042624/280e251a-da26-44a6-a8b3-2ffecbf1e6a4)
+
+
 
 <H3>Results:</H3>
 Thus, Kalman filter is implemented to predict the next position and   velocity in Python
